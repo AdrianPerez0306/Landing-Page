@@ -8,57 +8,75 @@
     <title>Responsive landing page</title>
 </head>
 <body>
-    
-    <!--Start of Side bar.-->
-    <!-- Using <aside> for left vertical side bar instead of horizontal nav bar-->
-    <div class="container-side-nav-bar">
-        <aside>
-            <div class="side-nav-bar-logo">
-                <div class="logo">
-                    <img src="images/web_logo.png" alt="logo">
-                    <h2>LandingPage</h2>
+    <!-- MAIN CONTAINER INSIDE BOD.-->
+    <div class="container-main">
+        <!--Start of Side bar.-->
+        <!-- Using <aside> for left vertical side bar instead of horizontal nav bar-->
+        <aside class="sidebar-menu">
+            <header>
+                <div class="sidebar-image-text">
+                    <div class="image">
+                        <img src="images/web_logo.png" alt="logo">
+                    </div>
+                    <div class="text header-text">
+                        <h2>LandingPage</h2>
+                    </div>
                 </div>
-                <div class="close" id="close_button">
-                    <span class="material-symbols-outlined">close</span>
+
+                <div class="toggle">
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
                 </div>
-            </div>
+            </header>
             
-            <div class="side-nav-bar">
-                 <a href="#" class="active">
-                    <span class="material-symbols-outlined">home</span>
-                    <h3>Home page</h3>
-                 </a>
-                 <a href="#">
-                    <span class="material-symbols-outlined">folder_open</span>
-                    <h3>Proyects</h3>
-                 </a>
-                 <a href="#">
-                    <span class="material-symbols-outlined">perm_contact_calendar</span>
-                    <h3>About me</h3>
-                 </a>
+            <div class="sidebar-options">
+
+                <div class="top-page option">
+                    <a href="#" class="active">
+                        <span class="material-symbols-outlined sidebar-icon">home</span>
+                        <h3>Home page</h3>
+                    </a>
+                </div>
+                
+                <div class="proyects option">
+                    <a href="#">
+                        <span class="material-symbols-outlined sidebar-icon">folder_open</span>
+                        <h3>Proyects</h3>
+                    </a>
+                </div>
+                 
             </div>
+
+            <div class="bottom-options">
+                
+                <div class="about option">
+                    <a href="#">
+                        <span class="material-symbols-outlined sidebar-icon">perm_contact_calendar</span>
+                        <h3>About me</h3>
+                    </a>
+                </div>
+
+                <div class="mode">
+                    <div class="dark-light">
+                        <span class="material-symbols-outlined active icon light">
+                            light_mode
+                        </span>
+                        <span class="material-symbols-outlined icon dark">
+                            dark_mode
+                        </span>
+                    </div>
+                    <span class="mode-text">Dark mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </div>
+               
+            </div>
+
+            
         </aside>
         <!-- End of Side bar-->
-
-        <!-- Right Section -->
-        <div class="right-section">
-            <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
-                </button>
-                <div class="dark-mode">
-                    <span class="material-symbols-outlined">
-                        light_mode
-                    </span>
-                    <span class="material-symbols-outlined">
-                        dark_mode
-                    </span>
-                </div>
-
-
-    </div>
 
     
 
