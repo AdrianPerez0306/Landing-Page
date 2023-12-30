@@ -4,12 +4,14 @@
     /*======= Colores ========*/
     --main-background: #778da0;
     --sidebar-background: #ebe5e5;
+    --mode-background: #cec8c8;
+    --mode-toggle-background: #cec8c8;
+    --mode-toggle: #a29e9e; 
+
+    --toggle-bakground: black;
+
     --sidebar-header: black;
     --sidebar-options: black;
-    --toggle-bakground: #1b9c85;
-    --mode-background: #ff0060;
-    --mode-toggle: #363949; 
-    --mode-toggle-background: #7d8da1;
     
     /*======= Transiciones ========*/
     --tran-02: all 0.2s ease;
@@ -89,21 +91,20 @@ html{
     justify-content: center;
     border-radius: 50%;
     color: var(--sidebar-background);
-    font-size: 2rem;
 }
 
 /*====== sidebar options =======*/
 .sidebar-menu .sidebar-options{
     margin-top: 1rem;
 }
+    /*====== Hover to all options, except Mode =======*/
 .sidebar-menu .sidebar-options a, .sidebar-menu .bottom-options .about a{
-    height: 100%;
     display: flex;
     align-items: center;
-    text-decoration: none;
     border-radius: 6px;
+    gap: 1.5rem;
+    text-decoration: none;
     transition: var(--tran-04);
-    gap: 2rem;
 }
 .sidebar-menu .sidebar-options a:hover, .sidebar-menu .bottom-options .about a:hover{
     background: var(--main-background);
@@ -119,7 +120,8 @@ html{
 .sidebar-menu .bottom-options .mode{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    border-radius: 6px;
+    gap: 1.5rem;
     background: var(--mode-background);
 }
 .sidebar-menu .bottom-options .mode .dark-light{
@@ -139,6 +141,7 @@ html{
     display: flex;
     min-height: 60px;
     min-width: 60px;
+    border-radius: 6px;
     align-items: center;
     justify-content: center;
     background: var(--mode-toggle-background);
@@ -158,6 +161,6 @@ html{
     border-radius: 50%;
     top: 50%;
     left: 5px;
-    background: var(--main-background);
+    background: var(--sidebar-background);
     transform: translateY(-50%);
 }
