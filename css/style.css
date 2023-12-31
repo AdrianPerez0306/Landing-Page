@@ -39,6 +39,8 @@
 .sidebar-menu .icon{
     color: var(--sidebar-options);
 }
+
+
 /*===== HTML =====*/
 html{
     width: 100vw;
@@ -60,9 +62,11 @@ html{
     top: 0;
     left: 0;
     height: 100%;
-    width: 17em;
     padding: 1rem 2rem;
     background: var(--sidebar-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*====== side bar logo & text =======*/
@@ -98,22 +102,27 @@ html{
     margin-top: 1rem;
 }
     /*====== Hover to all options, except Mode =======*/
-.sidebar-menu .sidebar-options a, .sidebar-menu .bottom-options .about a{
+.sidebar-menu .sidebar-options .option a, .sidebar-menu .bottom-options .option a{
     display: flex;
     align-items: center;
     border-radius: 6px;
-    gap: 1.5rem;
+    gap: 1rem;
     text-decoration: none;
     transition: var(--tran-04);
+    padding-right: 2rem;
+    padding-left: 2rem;
+    box-sizing: border-box;
 }
-.sidebar-menu .sidebar-options a:hover, .sidebar-menu .bottom-options .about a:hover{
+.sidebar-menu .sidebar-options div:hover, .sidebar-menu .bottom-options .about:hover{
     background: var(--main-background);
+    border-radius: 6px;
 }
 
 /*====== sidebar bottom options=======*/
 .sidebar-menu .bottom-options{
-    position: absolute;
     bottom: 3rem;
+    position: absolute;
+    gap: 5rem;
 }
 
 /*====== Dark Light Mode=======*/
