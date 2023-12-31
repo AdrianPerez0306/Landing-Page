@@ -4,20 +4,22 @@
     /*======= Colores ========*/
     --main-background: #778da0;
     --sidebar-background: #ebe5e5;
+    --sidebar-text: black;
+    --sidebar-icon: black;
+    --toggle-bakground: black;
     --mode-background: #cec8c8;
     --mode-toggle-background: #cec8c8;
     --mode-toggle: #a29e9e; 
-
-    --toggle-bakground: black;
-
-    --sidebar-header: black;
-    --sidebar-options: black;
     
     /*======= Transiciones ========*/
     --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
+    
+    /*======= Distances(padding, gaps) ========*/
+
+    /*======= Borders radius ========*/
 }
 
 /*====== Reusable =========*/
@@ -33,11 +35,11 @@
 }
 
 .sidebar-menu .text{
-    color: var(--sidebar-options);
+    color: var(--sidebar-text);
 }
 
 .sidebar-menu .icon{
-    color: var(--sidebar-options);
+    color: var(--sidebar-icon);
 }
 
 
@@ -62,11 +64,11 @@ html{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     background: var(--sidebar-background);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /*====== side bar logo & text =======*/
@@ -99,6 +101,7 @@ html{
 
 /*====== sidebar options =======*/
 .sidebar-menu .sidebar-options{
+    position: relative;
     margin-top: 1rem;
 }
     /*====== Hover to all options, except Mode =======*/
@@ -113,6 +116,7 @@ html{
     padding-left: 2rem;
     box-sizing: border-box;
 }
+/*====== Hover to all options, except Mode =======*/
 .sidebar-menu .sidebar-options div:hover, .sidebar-menu .bottom-options .about:hover{
     background: var(--main-background);
     border-radius: 6px;
@@ -122,7 +126,6 @@ html{
 .sidebar-menu .bottom-options{
     bottom: 3rem;
     position: absolute;
-    gap: 5rem;
 }
 
 /*====== Dark Light Mode=======*/
@@ -130,8 +133,9 @@ html{
     display: flex;
     align-items: center;
     border-radius: 6px;
-    gap: 1.5rem;
+    gap: 0.5rem;
     background: var(--mode-background);
+    padding: 0 0 0 1rem;
 }
 .sidebar-menu .bottom-options .mode .dark-light{
     display: flex;
