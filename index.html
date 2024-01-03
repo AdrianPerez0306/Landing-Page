@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script> 
     <title>Responsive landing page</title>
 </head>
 <body>
@@ -13,6 +15,11 @@
         <!--Start of Side bar.-->
         <!-- Using <aside> for left vertical side bar instead of horizontal nav bar-->
         <aside class="sidebar-menu">
+            <section class="pyscript">
+                <script type="py" src="py/main.py" config="py/pyscript.toml"></script>
+                <div id="display"></div>
+            </section>
+
 
             <header>
 
@@ -77,7 +84,7 @@
                     </div>
                     <span class="mode-text text">Dark mode</span>
                     <div class="toggle-switch">
-                        <span class="switch"></span>
+                        <span class="switch" py-click="switch_mode"></span>
                     </div>
                 </div>
                
@@ -87,7 +94,6 @@
         </aside>
         <!-- End of Side bar-->
 
-    
 
 </body>
 

@@ -20,6 +20,8 @@
     /*======= Distances(padding, gaps) ========*/
 
     /*======= Borders radius ========*/
+
+    
 }
 
 /*====== Reusable =========*/
@@ -58,7 +60,7 @@ html{
 /*====== sidebar START =======*/
 /*============================*/
 
-/*====== aside class='sidebar-menu'  =======*/
+    /*====== aside class='sidebar-menu'  =======*/
 .sidebar-menu{
     position:fixed;
     top: 0;
