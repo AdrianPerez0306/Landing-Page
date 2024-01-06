@@ -1,6 +1,6 @@
-from pyscript import document , when, display
+from pyscript import document , when
 
 @when("click", "switch")
 def switch_mode(event):
     #Comentario
-    display(["Prueba"], target="display")
+    document.querySelector('body').classList.toggle('dark')
