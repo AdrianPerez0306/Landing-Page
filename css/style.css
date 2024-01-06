@@ -53,9 +53,26 @@ html{
     font-size: 0.88rem;
     user-select: none;
     overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
     background-color: var(--main-background);
 }
 
+body.dark{
+    /*Light to Dark*/
+    --main-background: #18191a;
+    --sidebar-background: #242526;
+    --mode-background: #3a3b3c;
+    --mode-toggle-background: #cec8c8;
+    --mode-toggle: #a29e9e; 
+    /*Dark to Light*/
+    --sidebar-text: black;
+    --sidebar-icon: black;
+    --toggle-bakground: black;
+}
 /*============================*/
 /*====== sidebar START =======*/
 /*============================*/
@@ -130,7 +147,7 @@ html{
     position: absolute;
 }
 
-/*====== Dark Light Mode=======*/
+/*====== Dark Light Mode -=======*/
 .sidebar-menu .bottom-options .mode{
     display: flex;
     align-items: center;
@@ -178,4 +195,9 @@ html{
     left: 5px;
     background: var(--sidebar-background);
     transform: translateY(-50%);
+    transition: var(--tran-03);
+}
+
+body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
+    left: 1.5rem;
 }
