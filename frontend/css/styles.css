@@ -1,5 +1,10 @@
+/*====== IMPORTS============================================================*/
+/*==========================================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap');  
 
+/*==========================================================================*/
+/*====== ROOT ==============================================================*/
+/*==========================================================================*/
 :root{
     /*======= Colores ========*/
     --main-background: #778da0;
@@ -23,190 +28,182 @@
 
     
 }
-
-/*====== Reusable =========*/
-.sidebar-menu .header-text{
-    font-size: 1rem;
-    font-weight: 200;
-}
-
-.sidebar-menu .image{
-    min-width: 3rem;
-    display: flex;
-    align-items: center;
-}
-
-.sidebar-menu .text{
-    color: var(--sidebar-text);
-}
-
-.sidebar-menu .icon{
-    color: var(--sidebar-icon);
-}
-
-
-/*===== HTML =====*/
+/*=================================================================================*/
+/*====== HTML & BODY ==============================================================*/
+/*=================================================================================*/
 html{
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.88rem; /*default 16px => 0.88*16px=14px aprox*/
     user-select: none;
     overflow-x: hidden;
 }
-
 body{
     width: 100vw;
     height: 100vh;
     background-color: var(--main-background);
     transition: var(--tran-02);
+    &.dark{
+        --main-background: #18191a;
+        --sidebar-background: #242526;
+        --mode-background: #3a3b3c;
+        --mode-toggle-background: #3a3b3c;
+        --mode-toggle: #a29e9e; 
+        /*Dark to Light*/
+        --sidebar-text: #ebe5e5;
+        --sidebar-icon: #ebe5e5;
+        --toggle-bakground: #ebe5e5;
+    }
 }
 
-body.dark{
-    /*Light to Dark*/
-    --main-background: #18191a;
-    --sidebar-background: #242526;
-    --mode-background: #3a3b3c;
-    --mode-toggle-background: #3a3b3c;
-    --mode-toggle: #a29e9e; 
-    /*Dark to Light*/
-    --sidebar-text: #ebe5e5;
-    --sidebar-icon: #ebe5e5;
-    --toggle-bakground: #ebe5e5;
+body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
+    left: 1.5rem;
 }
-/*============================*/
-/*====== sidebar START =======*/
-/*============================*/
-
-    /*====== aside class='sidebar-menu'  =======*/
+    
+/*==========================================================================*/
+/*====== SIDEBAR MENU ======================================================*/
+/*==========================================================================*/
 .sidebar-menu{
     position:fixed;
     top: 0;
     left: 0;
     height: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0rem 1.5rem 2rem;
     background: var(--sidebar-background);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    & .icon{color: var(--sidebar-icon);}
+    & .text{color: var(--sidebar-text);}
+    /*====== HEADER LOGO & TEXT =========*/
+    /*===================================*/
+    & header{ 
+        display: flex;
+        align-items: center;
+        & .sidebar-image-text{ 
+            display: flex;
+            align-items: center;
+            & .image{
+                display: flex;
+                & img{
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 6px;
+                }
+            }
+            & .header-text{
+                padding: 0 0 0 1rem;
+            }
+        }
+        /*====== toggle minimize-expand =========*/
+        /*=======================================*/
+        & .toggle{
+            height: 2rem; /*size*/
+            width: 2rem;
+            display: flex; /*alignment of icon*/
+            align-items: center;
+            justify-content: center;
+            border-radius: 35%;
+            background: var(--toggle-bakground); /*color*/
+            color: var(--sidebar-background);
+            position: relative; /*position*/
+            left: 1.2rem;
+            cursor: pointer;
+        }
+    }
+
+    /*============= OPTIONS CONTAINERS POSOTION =============*/
+    /*==============================================*/
+    & .sidebar-options{
+        position: relative;
+        margin-top: 1rem;
+        & div:hover{
+            background: var(--main-background);
+            border-radius: 6px;
+            width: 90%;
+        }
+    }
+    & .bottom-options{
+        position: absolute;
+        bottom: 3rem;
+        & .about:hover{
+            background: var(--main-background);
+            border-radius: 6px;
+        }
+        & .mode{
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            gap: 0.5rem;
+            background: var(--mode-background);
+            padding: 0 0 0 1rem;
+            
+            & .dark-light{
+                display: flex;
+                flex-direction: column;
+                width: 1.8rem;
+                height: 1.6rem;
+                align-items: center;
+                & .light{ opacity: 0; }
+            }
+
+            & .icon{position: absolute;}            }
+
+            & .toggle-switch{
+                display: flex;
+                min-height: 4.3rem;
+                min-width: 4.3rem;
+                border-radius: 6px;
+                align-items: center;
+                justify-content: center;
+                background: var(--mode-toggle-background);
+                & .switch{
+                    position: relative;
+                    min-height: 1.3rem;
+                    min-width: 2.7rem;
+                    border-radius: 3rem;
+                    background: var(--mode-toggle);
+                    cursor: pointer;
+                    /* &::before hace un puntero al padre, en este caso class="switch"*/
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        min-height: 0.9rem;
+                        min-width: 0.9rem;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 5px;
+                        background: var(--sidebar-background);
+                        transform: translateY(-50%);
+                        transition: var(--tran-03);
+                    }
+                }
+            }
+    }
+    /*====== Align all class='option' with <a></> inside for links =======*/
+    /*==========================================*/
+    & .option a{
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        gap: 1rem;
+        text-decoration: none;
+        transition: var(--tran-04);
+        padding-left: 2rem;
+        box-sizing: border-box;
+    }
 }
+    
 .sidebar-menu.close{
-    width: 78px;
-}
-.sidebar-menu.close header .sidebar-image-text .header-text{
-    display: none;
-}
-.sidebar-menu.close .text{
-    opacity: 0;
-}
-/*====== side bar logo & text =======*/
-.sidebar-menu header{
-    position: relative;
-}
-.sidebar-menu header .sidebar-image-text{
-    display: flex;
-    align-items: center;
-}
-.sidebar-menu header .sidebar-image-text img{
-    width: 2rem;
-    height: 2rem;
-    border-radius: 6px;
-}
-.sidebar-menu header .toggle{
-    position: absolute;
-    top: 50%;
-    right: -3rem;
-    transform: translateY(-50%);
-    height: 2rem;
-    width: 2rem;
-    background: var(--toggle-bakground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: var(--sidebar-background);
-}
-
-/*====== sidebar options =======*/
-.sidebar-menu .sidebar-options{
-    position: relative;
-    margin-top: 1rem;
-}
-    /*====== Hover to all options, except Mode =======*/
-.sidebar-menu .sidebar-options .option a, .sidebar-menu .bottom-options .option a{
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    gap: 1rem;
-    text-decoration: none;
-    transition: var(--tran-04);
-    padding-right: 2rem;
-    padding-left: 2rem;
-    box-sizing: border-box;
-}
-/*====== Hover to all options, except Mode =======*/
-.sidebar-menu .sidebar-options div:hover, .sidebar-menu .bottom-options .about:hover{
-    background: var(--main-background);
-    border-radius: 6px;
-}
-
-/*====== sidebar bottom options=======*/
-.sidebar-menu .bottom-options{
-    bottom: 3rem;
-    position: absolute;
-}
-
-/*====== Dark Light Mode -=======*/
-.sidebar-menu .bottom-options .mode{
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    gap: 0.5rem;
-    background: var(--mode-background);
-    padding: 0 0 0 1rem;
-}
-.sidebar-menu .bottom-options .mode .dark-light{
-    display: flex;
-    flex-direction: column;
-    width: 1.8rem;
-    height: 1.6rem;
-    align-items: center;
-}
-.sidebar-menu .bottom-options .mode .dark-light .light{
-    opacity: 0;
-}
-.sidebar-menu .bottom-options .mode .icon{
-    position: absolute;
-}
-.sidebar-menu .bottom-options .mode .toggle-switch{
-    display: flex;
-    min-height: 60px;
-    min-width: 60px;
-    border-radius: 6px;
-    align-items: center;
-    justify-content: center;
-    background: var(--mode-toggle-background);
-}
-.sidebar-menu .bottom-options .mode .toggle-switch .switch{
-    position: relative;
-    min-height: 1.3rem;
-    min-width: 2.7rem;
-    border-radius: 3rem;
-    background: var(--mode-toggle);
-}
-.sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
-    content: '';
-    position: absolute;
-    min-height: 0.9rem;
-    min-width: 0.9rem;
-    border-radius: 50%;
-    top: 50%;
-    left: 5px;
-    background: var(--sidebar-background);
-    transform: translateY(-50%);
-    transition: var(--tran-03);
-}
-
-body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
-    left: 1.5rem;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0rem 1.5rem 2rem;
+    & header{
+        & .sidebar-image-text{
+            /*& .image{}*/
+            & .header-text{ display: none;}
+        }
+    }
+    
+    & .text{ display: none; }
 }
