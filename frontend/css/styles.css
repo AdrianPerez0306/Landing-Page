@@ -71,8 +71,12 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
     height: 100%;
     padding: 1rem 0rem 1.5rem 2rem;
     background: var(--sidebar-background);
+    transition: var(--tran-05);
     & .icon{color: var(--sidebar-icon);}
-    & .text{color: var(--sidebar-text);}
+    & .text{
+        color: var(--sidebar-text);
+        transition: var(--tran-05);
+    }
     /*====== HEADER LOGO & TEXT =========*/
     /*===================================*/
     & header{ 
@@ -190,20 +194,111 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
         padding-left: 2rem;
         box-sizing: border-box;
     }
-}
+    /*====== CLOSED NAV BAR ===========================*/
+    /*====================================================*/
+    &.close{
+        .header-text{ display: none;}
+        .text{ display: none; }
+        & header{ 
+            display: flex;
+            align-items: center;
+            & .sidebar-image-text{ 
+                display: flex;
+                align-items: center;
+                & .image{
+                    display: flex;
+                    & img{
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 6px;
+                    }
+                }
+                & .header-text{
+                    padding: 0 0 0 1rem;
+                }
+            }
+            /*====== toggle minimize-expand =========*/
+            /*=======================================*/
+            & .toggle{
+                height: 2rem; /*size*/
+                width: 2rem;
+                display: flex; /*alignment of icon*/
+                align-items: center;
+                justify-content: center;
+                border-radius: 35%;
+                background: var(--toggle-bakground); /*color*/
+                color: var(--sidebar-background);
+                position: relative; /*position*/
+                left: 1.2rem;
+                cursor: pointer;
+            }
+        }
+        & .sidebar-options{
+            position: relative;
+            margin-top: 7rem;
+            & div:hover{
+                background: red;
+                border-radius: 6px;
+                width: 30%;
+            }
+        }
+        & .bottom-options{
+            position: absolute;
+            bottom: 3rem;
+            & .about:hover{
+                background: var(--main-background);
+                border-radius: 6px;
+            }
+            & .mode{
+                display: flex;
+                align-items: center;
+                border-radius: 6px;
+                gap: 0.5rem;
+                background: var(--mode-background);
+                padding: 0 0 0 1rem;
+                
+                & .dark-light{
+                    display: flex;
+                    flex-direction: column;
+                    width: 1.8rem;
+                    height: 1.6rem;
+                    align-items: center;
+                    & .light{ opacity: 0; }
+                }
     
-.sidebar-menu.close{
-    position:fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 1rem 0rem 1.5rem 2rem;
-    & header{
-        & .sidebar-image-text{
-            /*& .image{}*/
-            & .header-text{ display: none;}
+                & .icon{position: absolute;}            
+            }
+    
+            & .toggle-switch{
+                display: flex;
+                min-height: 4.3rem;
+                min-width: 4.3rem;
+                border-radius: 6px;
+                align-items: center;
+                justify-content: center;
+                background: var(--mode-toggle-background);
+                & .switch{
+                    position: relative;
+                    min-height: 1.3rem;
+                    min-width: 2.7rem;
+                    border-radius: 3rem;
+                    background: var(--mode-toggle);
+                    cursor: pointer;
+                    /* &::before hace un puntero al padre, en este caso class="switch"*/
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        min-height: 0.9rem;
+                        min-width: 0.9rem;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 5px;
+                        background: var(--sidebar-background);
+                        transform: translateY(-50%);
+                        transition: var(--tran-03);
+                    }
+                }
+            }
         }
     }
-    
-    & .text{ display: none; }
 }

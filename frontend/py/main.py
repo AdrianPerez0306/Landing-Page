@@ -9,3 +9,4 @@ def switch_mode(event):
 def switch_toggle(event):
     #Comentario
     document.querySelector('aside').classList.toggle('close')
+
