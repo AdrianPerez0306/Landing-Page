@@ -40,8 +40,10 @@ html{
     overflow: hidden;
 }
 body{
+    display: flex;
     width: 100vw;
     height: 100vh;
+    margin: 0;
     background-color: var(--main-background);
     transition: var(--tran-02);
     &.dark{
@@ -60,20 +62,18 @@ body{
 body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
     left: 1.5rem;
 }
-    
+
 /*==========================================================================*/
 /*====== SIDEBAR MENU ======================================================*/
 /*==========================================================================*/
 .sidebar-menu{
-    position:fixed;
-    top: 0;
-    left: 0;
     height: 100%;
     padding: 1rem 0rem 1.5rem 1rem;
+    width: auto;
     background: var(--sidebar-background);
-    transition: var(--tran-05);
+    transition: var(--tran-02);
     & .icon{color: var(--sidebar-icon);}
-    & .text{
+    & .sidebar-text{
         color: var(--sidebar-text);
         transition: var(--tran-05);
     }
@@ -127,7 +127,7 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
     }
     & .bottom-options{
         position: absolute;
-        bottom: 3rem;
+        bottom: 1rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -201,7 +201,7 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
     /*====== CLOSED NAV BAR ===========================*/
     /*====================================================*/
     &.close{
-        .text{ display: none; }
+        .sidebar-text{ display: none; }
         .header-text{ display: none;}
         padding: 1rem 1rem 1.5rem 1rem;
         & header{
@@ -221,7 +221,7 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
         }
         & .bottom-options{
             position: absolute;
-            bottom: 3rem;
+            bottom: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
@@ -289,6 +289,61 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
             left: 0.7rem;
             & a{ padding: 0.5rem 0.5rem 0.5rem 0.5rem; }
                         
+        }
+    }
+}
+
+.main-content{
+    background-color: rgb(158, 86, 86);
+    overflow: auto;
+    & section{
+        margin-left: 2rem;
+        /*height para tantear. Todo contenido misma heigth o diferentes?*/
+        /*height: 50%;*/
+        
+        &.about{
+            display: flex;
+            margin: 2rem 2rem 0;
+            & .image{
+                margin: 1rem;
+                & img{
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 6px;
+                    background: white;
+                }
+            }
+            & .content-text{
+
+                font-size: large;
+                margin: 1rem;
+            }
+        }
+
+        &.proyects{
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            & .proyect{
+                display: flex;
+                margin-left: 1rem;
+                align-items: end;
+                & .proyect-name{
+                    font-size: xx-large;
+                }
+                & .description{
+                    width: 50%;
+                }
+            }
+        }
+
+        &.contact{
+            display: flex;
+            & .contact-medium{
+                display: flex;
+                align-items: center;
+                margin-left: 1rem;
+            }
         }
     }
 }
