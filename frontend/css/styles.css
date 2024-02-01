@@ -68,7 +68,7 @@ body.dark .sidebar-menu .bottom-options .mode .toggle-switch .switch::before{
 /*==========================================================================*/
 .sidebar-menu{
     height: 100%;
-    padding: 1rem 0rem 1.5rem 1rem;
+    padding: 0rem 0rem 0rem 0rem;
     width: auto;
     background: var(--sidebar-background);
     transition: var(--tran-02);
