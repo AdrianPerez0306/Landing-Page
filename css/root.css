@@ -6,7 +6,7 @@
 /*==========================================================================*/
 :root{
     /*======= Colores ========*/
-    --background-content: #D3CBB8;
+    --background-content: #D3CBB0;
     --background-sidebar:  #ebe5e5 ;
     --background-dark-light-mode: #cec8c8  ;
     --background-toggle: var(--background-dark-light-mode) ;
