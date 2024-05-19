@@ -1,0 +1,59 @@
+/*====== IMPORTS============================================================*/
+/*==========================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap');  
+/*==========================================================================*/
+/*====== ROOT ==============================================================*/
+/*==========================================================================*/
+:root{
+    /*======= Colores ========*/
+    --background-content: #D3CBB0;
+    --background-sidebar:  #ebe5e5 ;
+    --background-dark-light-mode: #cec8c8  ;
+    --background-toggle: var(--background-dark-light-mode) ;
+    --background-toggle-switch: #a29e9e  ;
+    --background-toggle-arrow: black;
+    
+    
+    --text-header: black;
+    --text-sidebar: var(--text-header);
+    --text-dark-light-mode: var(--text-header);
+    
+    --icon-header: black;
+    --icon-toggle-arrow: white;
+    --icon-sidebar: var(--icon-header);
+    --icon-dark-light-mode: var(--icon-header);
+
+    /*======= Transiciones ========*/
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+    /*======= Distances(padding, gaps) ========*/
+    --color-default:#004f83;
+    --color-second:#0067ac;
+    --color-white:#fff;
+    --color-body:#e4e9f7;
+    --color-light:#e0e0e0;
+    /*======= Borders radius ========*/
+
+    & body.dark{
+        --background-content: rgb(95, 88, 69);
+        --background-sidebar:  #242526 ;
+        --background-dark-light-mode: #3a3b3c  ;
+        --background-toggle: var(--background-dark-light-mode) ;
+        --background-toggle-switch: #a29e9e  ;
+        --background-toggle-arrow: white;
+        
+        --text-header: white;
+        --text-sidebar: var(--text-header);
+        --text-dark-light-mode: var(--text-header);
+        
+        --icon-header: white;
+        --icon-toggle-arrow: black;
+        --icon-sidebar: var(--icon-header);
+        --icon-dark-light-mode: var(--icon-header);
+
+        
+    }
+}

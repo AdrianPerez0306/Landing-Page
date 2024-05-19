@@ -1,0 +1,19 @@
+/*
+@media not|only mediatype and (media feature) and (media feature) {
+  CSS-Code;
+}
+
+MEDIA TYPE
+all 	Used for all media type devices
+print 	Used for print preview mode
+screen 	Used for computer screens, tablets, smart-phones etc.
+
+MEDIA FEATURES
+orientation 	Orientation of the viewport. Landscape or portrait
+max-height 	Maximum height of the viewport
+min-height 	Minimum height of the viewport
+height 	Height of the viewport (including scrollbar)
+max-width 	Maximum width of the viewport
+min-width 	Minimum width of the viewport
+width 	Width of the viewport (including scrollbar)
+*/

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --color-default:#004f83;
+    --color-second:#0067ac;
+    --color-white:#fff;
+    --color-body:#e4e9f7;
+    --color-light:#e0e0e0;
+}
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+
+    &.dark{
+
+        & .sidebar .nav-list li.profile .toggle .toggle-container .toggle-real {
+            transition: background-color, left 0.5s ease;
+            background: purple;
+            left: 53%;
+        }
+    }
+}
+
+.sidebar{
+    /*FOrma y espacio*/
+    min-height: 100vh;
+    width: 78px;
+    padding: 6px 14px;
+    /*Posicion*/
+    position: fixed;
+    top:0;
+    left: 0;
+    /*Colores y transiciones*/
+    background-color: var(--color-default);
+    transition: all .5s ease;
+    &.open{
+        width: 250px;
+        & ~ .home-section{
+            left:250px;
+            width: calc(100% - 250px);
+        }
+        & .nav-list li{
+            &.profile{
+                width: 250px;
+                & .toggle{  width: 30%; }
+            }
+            & a .link_name{
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+        & .logo_details{
+            & .icon, .logo_name{  opacity: 1; }
+            & #btn{ text-align: right;  }
+            & i.bxs-castle{
+                opacity: 1;
+                transition: all 0.5s ease ;
+            }
+        }
+
+    }
+
+    & .logo_details{
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        & i.bxs-castle{
+            opacity: 0;
+            transition: all 0.5s ease ;
+        }
+
+        & .logo_name{
+            color:var(--color-white);
+            font-size: 1.375rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: all .5s ease;
+        }
+
+        & #btn{
+            position: absolute;
+            right: 0;
+            font-size: 1.438rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all .5s ease;
+        }
+
+    }
+
+    & i{
+        color:var(--color-white);
+        height: 3.75rem;
+        line-height: 3.75rem;
+        min-width: 3.125rem;
+        font-size: 1.563rem;
+        text-align: center;
+    }
+
+    & .nav-list{
+        margin-top: 1.25rem;
+        & li{
+            position: relative;
+            margin:8px 0;
+            list-style: none;
+
+            & a{
+                display: flex;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                text-decoration: none;
+                background-color: var(--color-default);
+                position: relative;
+                transition: all .5s ease;
+                z-index: 12;
+                & .link_name{
+                    color:var(--color-white);
+                    font-size: 15px;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    transition: all 0.4s ease;
+                    pointer-events: none;
+                    opacity: 0;
+                }
+                &:hover{
+                    transition: all 0.5s ease;
+                    background: sandybrown;
+                    border-radius: 1rem;
+                    & .link_name, i{
+                        transition: all 0.5s ease;
+                        color: black;
+                    }
+                }
+                & i{
+                    height: 35px;
+                    line-height: 35px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                }
+            }
+
+            &.profile{
+                position: fixed;
+                height: 60px;
+                width: 78px;
+                left: 0;
+                bottom:-8px;
+                padding:10px 14px;
+                overflow: hidden;
+                transition: all .5s ease;
+
+                & .profile_details{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap:  nowrap;
+                    & i{
+                        height: 45px;
+                        width: 45px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                        transition: 0.5s ease;
+                    }
+                }
+                & .toggle{
+                    position: absolute;
+                    top:0;
+                    right: 0;
+                    background-color: var(--color-second);
+                    width: 100%;
+                    height: 60px;
+                    border-radius: 5px;
+                    transition: all 0.5s ease;
+                    & .toggle-container{
+                        background: white;
+                        width: 67%;
+                        height: 37%;
+                        border-radius: 1rem;
+                        margin: 1.2rem 0.8rem 1.2rem 0.8rem;
+                        cursor: pointer;
+                        & .toggle-real{
+                            background: blue;
+                            width: 24%;
+                            height: 30%;
+                            position: absolute;
+                            left: 25%;
+                            border-radius: 1rem;
+                            margin: .1rem;
+                            transition: background-color, left 0.5s ease;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+.home-section{
+    position: relative;
+    background-color: var(--color-body);
+    min-height: 100vh;
+    top:0;
+    left:78px;
+    width: calc(100% - 78px);
+    transition: all .5s ease;
+    z-index: 2;
+}
+
+.home-section .text{
+    display: inline-block;
+    color:var(--color-default);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px;
+}
+

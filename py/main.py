@@ -8,4 +8,5 @@ def switch_mode(event):
 @when("click", "toggle")
 def switch_toggle(event):
     #Comentario
-    document.querySelector('aside').classList.toggle('close')
+    document.querySelector('div').classList.toggle('close')
+

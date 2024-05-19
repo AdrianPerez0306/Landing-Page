@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Sidebar</title>
+    <!-- Link Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="light">
+
+<div class="sidebar">
+
+    <div class="logo_details">
+        <i class='bx bxs-castle'></i>
+        <div class="logo_name">Personal portfolio</div>
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+
+    <ul class="nav-list">
+        <li>
+            <a href="#">
+                <i class="bx bx-grid-alt"></i>
+                <span class="link_name">Home</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="bx bx-user"></i>
+                <span class="link_name">Proyects</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="bx bx-chat"></i>
+                <span class="link_name">About me</span>
+            </a>
+        </li>
+
+        <li class="profile">
+            <div class="profile_details">
+                <div class="profile_content"> Mode: </div>
+                <i class='bx bx-sun' id="theme-reference-icon"></i>
+            </div>
+            <div class="toggle">
+                <div class="toggle-container">
+                    <div class="toggle-real" id="#toggle">
+
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+<section class="home-section">
+    <div class="text">Dashboard</div>
+</section>
+<!-- Scripts -->
+<script src="py/script.js"></script>
+</body>
+</html>
